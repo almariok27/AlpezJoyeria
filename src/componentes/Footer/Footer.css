@@ -1,0 +1,159 @@
+/* Contenedor principal del pie de página */
+.footer-contenedor {
+    background-color: #062C22;
+    /* El verde elegante */
+    color: #ffffff;
+    padding: 60px 20px 20px 20px;
+    /* Crea espacio entre los productos y el footer */
+    border-top: 3px solid #D8C08A;
+    /* Línea dorada en la parte superior */
+}
+
+/* La cuadrícula que organiza las 3 columnas */
+.footer-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    /* Distribuye mejor las columnas para centrar la frase */
+    gap: 40px;
+}
+
+/* --- COLUMNA 1: LOGO Y TEXTO --- */
+.footer-marca {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Espacio entre el logo cuadrado y el texto */
+}
+
+.footer-logo {
+    width: 350px;
+    height: 180px;
+    object-fit: auto;
+    border-radius: 4px;
+    /* Opcional: suaviza un poco las puntas del cuadrado */
+}
+
+.marca-texto h3 {
+    color: #D8C08A;
+    /* Dorado */
+    font-size: 1.8rem;
+    margin: 0 0 8px 0;
+}
+
+
+/* --- COLUMNAS 2 Y 3: TÍTULOS --- */
+.footer-enlaces h4,
+.footer-redes h4 {
+    color: #D8C08A;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- ESTILOS DE LOS ENLACES --- */
+.footer-enlaces ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-enlaces a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-enlaces a:hover {
+    color: #f6dfa9;
+    /* Se ilumina al pasar el mouse */
+}
+
+/* --- ESTILOS DE LOS ÍCONOS SOCIALES --- */
+.redes-iconos {
+    display: flex;
+    gap: 15px;
+}
+
+.redes-iconos a {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Círculo semitransparente de fondo */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.redes-iconos a:hover {
+    background-color: #D8C08A;
+    /* El círculo se vuelve dorado */
+    color: #062C22;
+    /* El ícono adentro se vuelve verde */
+    transform: translateY(-3px);
+    /* Pequeño salto al pasar el mouse */
+}
+
+/* --- COLUMNA 2: FRASE ELEGANTE --- */
+.footer-frase {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-frase p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.footer-frase em {
+    color: #D8C08A;
+    /* Resalta la frase en dorado */
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* --- BARRA INFERIOR --- */
+.footer-inferior {
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #888888;
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE: ADAPTACIÓN A CELULARES --- */
+@media (max-width: 768px) {
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        /* Pone todo en una sola columna vertical */
+        text-align: center;
+    }
+
+    .footer-marca {
+        flex-direction: column;
+        /* Pone el logo arriba del nombre */
+        text-align: center;
+    }
+
+    .redes-iconos {
+        justify-content: center;
+        /* Centra los círculos de las redes */
+    }
+}

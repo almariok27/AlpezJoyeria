@@ -1,0 +1,404 @@
+/* ============================================
+   PRODUCTOS ADMIN - ESTILOS
+   ============================================ */
+
+.productos-admin {
+    padding: 20px;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.productos-admin h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* FORMULARIO RAPIDO */
+.formulario-rapido {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 5px solid #d4a574;
+}
+
+.formulario-rapido h3 {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-row.triple {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form-productos input,
+.form-productos select,
+.form-productos textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-productos input:focus,
+.form-productos select:focus,
+.form-productos textarea:focus {
+    outline: none;
+    border-color: #d4a574;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+.form-productos textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-section label {
+    color: #555;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-section input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+/* BOTONES DEL FORMULARIO */
+.form-botones {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.btn-guardar {
+    flex: 1;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #d4a574 0%, #c9935f 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-guardar:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 165, 116, 0.3);
+}
+
+.btn-guardar:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-cancelar {
+    padding: 12px 20px;
+    background: #e8e8e8;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background: #d5d5d5;
+}
+
+/* FILTRO */
+.filtro-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.select-filtro {
+    padding: 10px 15px;
+    border: 2px solid #d4a574;
+    border-radius: 6px;
+    background: white;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.select-filtro:hover {
+    box-shadow: 0 3px 10px rgba(212, 165, 116, 0.2);
+}
+
+.select-filtro:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+/* TABLA */
+.tabla-contenedor {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+.tabla-productos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.tabla-productos thead {
+    background: linear-gradient(135deg, #f0e8e0 0%, #e8dfd5 100%);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #555;
+}
+
+.tabla-productos th {
+    padding: 15px 12px;
+    text-align: left;
+    border-bottom: 2px solid #d4a574;
+}
+
+.tabla-productos td {
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333;
+}
+
+.tabla-productos tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.tabla-productos tbody tr:hover {
+    background-color: #faf8f6;
+}
+
+.tabla-productos tbody tr.fila-editando {
+    background-color: #fff3e0;
+    border-left: 4px solid #d4a574;
+}
+
+.celda-imagen {
+    text-align: center;
+}
+
+.celda-imagen img {
+    transition: transform 0.3s ease;
+}
+
+.celda-imagen img:hover {
+    transform: scale(1.1);
+}
+
+.celda-nombre {
+    max-width: 150px;
+    word-wrap: break-word;
+}
+
+.celda-categoria {
+    text-align: center;
+}
+
+.badge-categoria {
+    display: inline-block;
+    background: linear-gradient(135deg, #d4a574 0%, #c9935f 100%);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.celda-precio {
+    text-align: right;
+    font-weight: 600;
+    color: #d4a574;
+}
+
+.celda-stock {
+    text-align: center;
+}
+
+.stock-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.stock-badge.stock-ok {
+    background: #d4f1d4;
+    color: #2d7d2d;
+}
+
+.stock-badge.stock-bajo {
+    background: #ffe6e6;
+    color: #d32f2f;
+}
+
+.celda-acciones {
+    text-align: center;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.btn-editar-sm,
+.btn-eliminar-sm {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-editar-sm {
+    background: #f0e8e0;
+    color: #d4a574;
+}
+
+.btn-editar-sm:hover {
+    background: #d4a574;
+    color: white;
+    transform: scale(1.1);
+}
+
+.btn-eliminar-sm {
+    background: #ffe6e6;
+    color: #d32f2f;
+}
+
+.btn-eliminar-sm:hover {
+    background: #d32f2f;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* LOADING */
+.loading {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla-productos {
+        font-size: 12px;
+    }
+
+    .tabla-productos th,
+    .tabla-productos td {
+        padding: 10px 8px;
+    }
+
+    .celda-nombre {
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .productos-admin {
+        padding: 15px;
+    }
+
+    .formulario-rapido {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .form-botones {
+        flex-direction: column;
+    }
+
+    .btn-editar-sm,
+    .btn-eliminar-sm {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .tabla-contenedor {
+        overflow-x: scroll;
+    }
+}
+
+@media (max-width: 480px) {
+    .productos-admin h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .formulario-rapido h3 {
+        font-size: 16px;
+    }
+
+    .form-productos input,
+    .form-productos select,
+    .form-productos textarea {
+        font-size: 13px;
+        padding: 10px;
+    }
+
+    .celda-acciones {
+        flex-direction: column;
+        gap: 4px;
+    }
+}

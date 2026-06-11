@@ -1,0 +1,261 @@
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centra el contenido en la pantalla */
+    padding: 40px 20px;
+}
+
+/* ===========================
+   CONTENEDOR BUSCADOR + FILTROS
+   =========================== */
+.buscador-filtros-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+/* ===========================
+   BUSCADOR EN CATÁLOGO
+   =========================== */
+.buscador-main-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 40px;
+}
+
+.buscador-main-icon {
+    position: absolute;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    color: #D8C08A;
+    pointer-events: none;
+}
+
+.buscador-main-input {
+    width: 100%;
+    padding: 10px 12px 10px 38px;
+    border: 2px solid #D8C08A;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background: rgba(216, 192, 138, 0.08);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.buscador-main-input::placeholder {
+    color: #999;
+}
+
+.buscador-main-input:focus {
+    outline: none;
+    border-color: #062C22;
+    background: rgba(6, 44, 34, 0.05);
+    box-shadow: 0 0 8px rgba(216, 192, 138, 0.2);
+}
+
+.buscador-main-clear {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.buscador-main-clear:hover {
+    color: #D8C08A;
+}
+
+/* ===========================
+   INFORMACIÓN DE RESULTADOS
+   =========================== */
+.resultados-info {
+    color: #666;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   SIN RESULTADOS
+   =========================== */
+.sin-resultados {
+    text-align: center;
+    padding: 80px 40px;
+    animation: fadeIn 0.6s ease-out;
+}
+
+.sin-resultados svg {
+    width: 80px;
+    height: 80px;
+    color: #D8C08A;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.sin-resultados h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin: 20px 0 10px 0;
+}
+
+.sin-resultados p {
+    color: #666;
+    font-size: 1rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* La magia de la cuadrícula */
+.cuadricula-productos {
+    display: grid;
+    /* Crea columnas que se adaptan automáticamente. Mínimo 250px de ancho, máximo 1 fracción del espacio */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    /* Espacio entre cada tarjeta */
+    justify-items: center;
+    /* Centra las tarjetas dentro de sus celdas */
+}
+
+.titulo-categoria {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eaeaea; /* Una línea divisoria sutil */
+    padding-bottom: 0.5rem;
+    color: #333;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .contenedor-principal {
+        padding: 30px 15px;
+    }
+
+    .buscador-filtros-container {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .buscador-main-wrapper {
+        max-width: 300px;
+    }
+
+    .buscador-main-input {
+        padding: 8px 10px 8px 34px;
+        font-size: 0.85rem;
+    }
+
+    .buscador-main-icon {
+        width: 16px;
+        height: 16px;
+        left: 10px;
+    }
+
+    .cuadricula-productos {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 20px 15px;
+    }
+
+    .buscador-filtros-container {
+        gap: 10px;
+        margin-bottom: 25px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buscador-main-wrapper {
+        max-width: 100%;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .buscador-main-input {
+        padding: 8px 10px 8px 34px;
+        font-size: 14px;
+    }
+
+    .buscador-main-icon {
+        width: 16px;
+        height: 16px;
+        left: 10px;
+    }
+
+    .cuadricula-productos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-principal {
+        padding: 20px 10px;
+    }
+
+    .buscador-container {
+        margin-bottom: 30px;
+    }
+
+    .buscador-input {
+        padding: 11px 12px 11px 38px;
+        font-size: 16px;
+        border-radius: 6px;
+    }
+
+    .buscador-icon {
+        width: 18px;
+        height: 18px;
+        left: 10px;
+    }
+
+    .sin-resultados {
+        padding: 60px 20px;
+    }
+
+    .sin-resultados svg {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 15px;
+    }
+
+    .sin-resultados h3 {
+        font-size: 1.2rem;
+    }
+
+    .cuadricula-productos {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+}

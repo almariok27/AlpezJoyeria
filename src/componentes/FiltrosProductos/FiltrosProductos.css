@@ -1,0 +1,93 @@
+/* ===========================
+   CONTENEDOR DE FILTROS
+   =========================== */
+.filtros-wrapper {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* ===========================
+   GRUPO DE FILTRO
+   =========================== */
+.filtro-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.filtro-group label {
+    font-weight: 600;
+    color: #062C22;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.filtro-select {
+    padding: 10px 12px;
+    border: 2px solid #D8C08A;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: inherit;
+    background: #ffffff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D8C08A' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 32px;
+}
+
+.filtro-select:hover {
+    border-color: #062C22;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23062C22' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+}
+
+.filtro-select:focus {
+    outline: none;
+    border-color: #062C22;
+    background: rgba(216, 192, 138, 0.08);
+    box-shadow: 0 0 8px rgba(216, 192, 138, 0.2);
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .filtros-wrapper {
+        gap: 12px;
+        margin-bottom: 30px;
+    }
+
+    .filtro-group label {
+        font-size: 0.85rem;
+    }
+
+    .filtro-select {
+        padding: 9px 10px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .filtros-wrapper {
+        gap: 10px;
+        margin-bottom: 25px;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .filtro-group {
+        width: 100%;
+    }
+
+    .filtro-select {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}

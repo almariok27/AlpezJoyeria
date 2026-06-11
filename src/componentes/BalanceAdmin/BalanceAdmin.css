@@ -1,0 +1,360 @@
+.balance-admin-container {
+    padding: 10px;
+}
+
+.balance-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 10px;
+}
+
+.balance-header-row h2 {
+    color: #2c3e50;
+    margin: 0;
+}
+
+.btn-cerrar-ciclo {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-cerrar-ciclo:hover {
+    background-color: #732d91;
+}
+
+/* KPIs GRID */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.kpi-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-top: 4px solid #ccc;
+}
+
+.kpi-card p {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 600;
+}
+
+.kpi-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.kpi-card.ventas {
+    border-top-color: #3498db;
+}
+
+.kpi-card.costos {
+    border-top-color: #e67e22;
+}
+
+.kpi-card.gastos-kpi {
+    border-top-color: #e74c3c;
+}
+
+.kpi-card.ganancia {
+    border-top-color: #27ae60;
+}
+
+.kpi-card.disponible {
+    border-top-color: #f1c40f;
+}
+
+/* ESPACIO DE TRABAJO */
+.balance-workspace {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.columna-gastos,
+.columna-ventas {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bloque-formulario,
+.lista-bloque {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.bloque-formulario h3,
+.lista-bloque h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    color: #34495e;
+}
+
+.form-gastos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-gastos input,
+.form-gastos select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn-agregar-gasto {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.tabla-balance {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.tabla-balance th,
+.tabla-balance td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.tabla-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.texto-rojo {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.texto-verde {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+.texto-pequeno {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.vacio {
+    text-align: center;
+    color: #95a5a6;
+    font-style: italic;
+}
+
+/* HISTORIAL DE CICLOS */
+.historial-ciclos-seccion {
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.selector-ciclo {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.selector-ciclo label {
+    font-weight: 600;
+    color: #2c3e50;
+    white-space: nowrap;
+}
+
+.selector-ciclo select {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .selector-ciclo {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .selector-ciclo label {
+        white-space: normal;
+    }
+
+    .selector-ciclo select {
+        width: 100%;
+        min-width: auto;
+        padding: 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .selector-ciclo {
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .selector-ciclo label {
+        font-size: 0.9rem;
+    }
+
+    .selector-ciclo select {
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 768px) {
+    .balance-admin-container {
+        padding: 10px;
+    }
+
+    .balance-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .kpi-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .kpi-card {
+        padding: 15px;
+    }
+
+    .balance-workspace {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .columna-gastos,
+    .columna-ventas {
+        flex: 1 1 auto;
+    }
+
+    .bloque-formulario,
+    .lista-bloque {
+        padding: 15px;
+    }
+
+    .tabla-balance {
+        font-size: 0.8rem;
+    }
+
+    .tabla-scroll {
+        max-height: 300px;
+        overflow-x: auto;
+    }
+
+    .tabla-balance th,
+    .tabla-balance td {
+        padding: 8px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .balance-admin-container {
+        padding: 8px;
+    }
+
+    .balance-header-row h2 {
+        font-size: 1.3rem;
+    }
+
+    .btn-cerrar-ciclo {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+    .kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kpi-card {
+        padding: 12px;
+    }
+
+    .kpi-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .bloque-formulario,
+    .lista-bloque {
+        padding: 12px;
+    }
+
+    .forma-gastos input,
+    .forma-gastos select {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+
+    .tabla-balance {
+        font-size: 0.75rem;
+    }
+
+    .tabla-balance th,
+    .tabla-balance td {
+        padding: 6px;
+    }
+
+    .tabla-scroll {
+        max-height: 250px;
+    }
+}

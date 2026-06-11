@@ -1,0 +1,288 @@
+.detalle-pagina {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px 100px;
+}
+
+.detalle-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+/* ---------------- BOTÓN VOLVER ---------------- */
+
+.boton-volver {
+    background: none;
+    border: none;
+    margin-bottom: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #1a1a1a;
+    padding: 0;
+}
+
+.boton-volver:hover {
+    color: #D8C08A;
+}
+
+/* ---------------- COLUMNA IMAGENES ---------------- */
+
+.columna-imagenes {
+    position: sticky;
+
+    /* Altura exacta del header + espacio */
+    top: 40px;
+
+    align-self: start;
+}
+
+.imagen-principal-contenedor {
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.imagen-principal {
+    width: 100%;
+
+    /* IMPORTANTE */
+    max-height: 82vh;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* ---------------- COLUMNA INFO ---------------- */
+
+.columna-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.detalle-titulo {
+    font-size: 2.2rem;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.detalle-material {
+    font-size: 0.9rem;
+    color: #666666;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.detalle-precio {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* ---------------- BOTÓN WHATSAPP ---------------- */
+
+.btn-whatsapp {
+    background-color: #062C22;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 40px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #D8C08A;
+}
+
+/* ---------------- ACORDEONES ---------------- */
+
+.acordeon-contenedor {
+    border-top: 1px solid #e0e0e0;
+}
+
+.acordeon-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.acordeon-titulo {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    text-align: left;
+}
+
+.acordeon-titulo:hover {
+    color: #062C22;
+}
+
+.acordeon-contenido {
+    max-height: 0;
+    overflow: hidden;
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease;
+}
+
+.acordeon-contenido.abierto {
+    max-height: 500px;
+    padding-bottom: 20px;
+}
+
+.acordeon-contenido p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ---------------- MINIATURAS ---------------- */
+
+.miniaturas-contenedor {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.miniatura {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+
+.miniatura:hover {
+    opacity: 0.8;
+}
+
+.miniatura.activa {
+    border-color: #062C22;
+}
+
+/* ---------------- SELECTORES ---------------- */
+
+.selector-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.selector-grupo label {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilos para los botones de opciones */
+.opciones-botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.opcion-boton {
+    padding: 12px 18px;
+    border: 2px solid #dcdcdc;
+    background-color: white;
+    color: #333;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.opcion-boton:hover {
+    border-color: #062C22;
+    color: #062C22;
+}
+
+.opcion-boton.activo {
+    background-color: #062C22;
+    color: #ffffff;
+    border-color: #062C22;
+}
+
+/* ---------------- CANTIDAD ---------------- */
+
+.cantidad-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.cantidad-boton {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #dcdcdc;
+    background-color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: 0.3s ease;
+}
+
+.cantidad-boton:hover {
+    background-color: #f5f5f5;
+}
+
+.cantidad-numero {
+    font-size: 1.1rem;
+    min-width: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* ---------------- RESPONSIVE EXTRA ---------------- */
+
+@media (max-width: 768px) {
+
+    .miniatura {
+        width: 65px;
+        height: 65px;
+    }
+
+}
+
+
+/* ---------------- RESPONSIVE ---------------- */
+
+@media (max-width: 768px) {
+
+    .detalle-contenedor {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .columna-imagenes {
+        position: relative;
+        top: 0;
+    }
+
+    .imagen-principal {
+        max-height: none;
+    }
+
+}

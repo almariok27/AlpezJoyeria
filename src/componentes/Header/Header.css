@@ -1,0 +1,362 @@
+.header {
+    background-color: #062C22;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 2px solid #D8C08A;
+    padding: 10px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+/* --- LOGO --- */
+.logo-contenedor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    cursor: pointer;
+    flex-shrink: 0;
+    color: #f6dfa9;
+    transition: all 0.3s ease;
+}
+
+.logo-contenedor:hover {
+    transform: scale(1.02);
+}
+
+.logo {
+    width: 240px;
+    height: 240px;
+    object-fit: auto;
+}
+
+/* --- RESPONSIVE HEADER --- */
+@media (max-width: 768px) {
+    .header {
+        height: 80px;
+        padding: 10px 20px;
+    }
+
+    .logo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .logo-contenedor {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        height: 70px;
+        padding: 8px 15px;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .header-right {
+        gap: 10px;
+    }
+}
+
+/* --- HEADER RIGHT (MENÚ ADMIN + USUARIO/LOGOUT) --- */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
+/* --- MENÚ HAMBURGUESA MOBILE --- */
+.header-admin-menu-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header-admin-menu-mobile {
+        display: flex;
+        order: -1;
+    }
+}
+
+.user-icon-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-icon {
+    width: 40px;
+    height: 40px;
+    color: #D8C08A;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.user-icon-link:hover .user-icon {
+    color: #f6dfa9;
+    transform: scale(1.1);
+}
+
+/* --- BOTÓN LOGOUT --- */
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, rgba(216, 192, 138, 0.2) 0%, rgba(216, 192, 138, 0.1) 100%);
+    border: 2px solid #D8C08A;
+    border-radius: 6px;
+    color: #D8C08A;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.logout-btn:hover {
+    background: linear-gradient(135deg, #D8C08A 0%, #f6dfa9 100%);
+    color: #062C22;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(216, 192, 138, 0.3);
+}
+
+.logout-btn:active {
+    transform: translateY(0);
+}
+
+.logout-icon {
+    width: 18px;
+    height: 18px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* --- RESPONSIVE PARA TABLETS --- */
+@media (max-width: 768px) {
+    .header {
+        height: 100px;
+        padding: 10px 20px;
+        gap: 15px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    .user-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logout-btn {
+        padding: 9px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+/* --- RESPONSIVE PARA MÓVILES --- */
+@media (max-width: 480px) {
+    .header {
+        height: auto;
+        padding: 10px 12px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .logo-contenedor {
+        gap: 10px;
+        flex-shrink: 0;
+    }
+
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .user-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .logout-btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .logout-icon {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ====================================
+   MODAL DE CONFIRMACIÓN DE LOGOUT
+   ==================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-dialog {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+    overflow: hidden;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #d4a574 0%, #c9935f 100%);
+    color: white;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.modal-body {
+    padding: 25px 20px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.modal-body p {
+    margin: 0;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    background: #f8f8f8;
+}
+
+.modal-btn-cancel,
+.modal-btn-confirm {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.modal-btn-cancel {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.modal-btn-cancel:hover:not(:disabled) {
+    background: #d5d5d5;
+}
+
+.modal-btn-confirm {
+    background: linear-gradient(135deg, #d4a574 0%, #c9935f 100%);
+    color: white;
+}
+
+.modal-btn-confirm:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(212, 165, 116, 0.3);
+}
+
+.modal-btn-cancel:disabled,
+.modal-btn-confirm:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* RESPONSIVE MODAL */
+@media (max-width: 480px) {
+    .modal-dialog {
+        max-width: 90%;
+    }
+
+    .modal-header h2 {
+        font-size: 18px;
+    }
+
+    .modal-body {
+        padding: 20px 15px;
+        font-size: 15px;
+    }
+
+    .modal-footer {
+        flex-direction: column;
+        padding: 12px;
+        gap: 8px;
+    }
+
+    .modal-btn-cancel,
+    .modal-btn-confirm {
+        min-width: unset;
+        width: 100%;
+    }
+}
