@@ -6,6 +6,7 @@ export default function DetalleProducto({ producto, onVolver }) {
   if (!producto) return null;
 
   const [seccionAbierta, setSeccionAbierta] = useState(null);
+  const [modalTelefonoAbierto, setModalTelefonoAbierto] = useState(false);
 
   const [imagenActiva, setImagenActiva] = useState(
     producto.imagenes[0]
@@ -31,20 +32,41 @@ export default function DetalleProducto({ producto, onVolver }) {
     );
   };
 
-  const numeroWhatsApp = "573001234567";
+  const numeros = [
+    { numero: "3155556523", etiqueta: "3155556523" },
+    { numero: "3219129345", etiqueta: "3219129345" }
+  ];
 
-  const mensaje = `
-Hola, quiero comprar:
+  const construirMensaje = () => {
+    let mensaje = `Hola, quiero comprar: ${cantidad} ${producto.nombre}`;
+    
+    const atributos = [];
+    
+    if (tamanoSeleccionado) {
+      atributos.push(`tamaño ${tamanoSeleccionado}`);
+    }
+    if (anchoSeleccionado) {
+      atributos.push(`ancho ${anchoSeleccionado}`);
+    }
+    if (colorSeleccionado) {
+      atributos.push(`color ${colorSeleccionado}`);
+    }
+    
+    if (atributos.length > 0) {
+      mensaje += ` de ${atributos.join(', ')}`;
+    }
+    
+    mensaje += ` con precio de $${producto.precio.toLocaleString()}`;
+    
+    return mensaje;
+  };
 
-Producto: ${producto.nombre}
-Cantidad: ${cantidad}
-Tamaño: ${tamanoSeleccionado}
-Ancho: ${anchoSeleccionado}
-Color: ${colorSeleccionado}
-Precio: ${producto.precio}
-`;
-
-  const enlaceWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+  const handleEnviarWhatsApp = (numeroWhatsApp) => {
+    const mensaje = construirMensaje();
+    const enlace = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+    window.open(enlace, '_blank');
+    setModalTelefonoAbierto(false);
+  };
 
   return (
     <main className="detalle-pagina">
@@ -196,14 +218,12 @@ Precio: ${producto.precio}
 
           {/* -------- BOTÓN -------- */}
 
-          <a
-            href={enlaceWhatsApp}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={() => setModalTelefonoAbierto(true)}
             className="btn-whatsapp"
           >
             COMPRAR POR WHATSAPP
-          </a>
+          </button>
 
           {/* ---------------- ACORDEONES ---------------- */}
 
@@ -314,6 +334,32 @@ Precio: ${producto.precio}
         </div>
 
       </div>
+
+      {/* MODAL SELECCIONAR TELÉFONO */}
+      {modalTelefonoAbierto && (
+        <div className="modal-overlay" onClick={() => setModalTelefonoAbierto(false)}>
+          <div className="modal-contenedor" onClick={(e) => e.stopPropagation()}>
+            <h2>Selecciona un número para enviar tu compra</h2>
+            <div className="modal-botones">
+              {numeros.map((item, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleEnviarWhatsApp(item.numero)}
+                  className="modal-boton-telefono"
+                >
+                  {item.etiqueta}
+                </button>
+              ))}
+            </div>
+            <button
+              onClick={() => setModalTelefonoAbierto(false)}
+              className="modal-boton-cerrar"
+            >
+              Cancelar
+            </button>
+          </div>
+        </div>
+      )}
 
     </main>
   );

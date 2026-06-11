@@ -1,7 +1,7 @@
 .detalle-pagina {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px 100px;
+    padding: 160px 20px 100px;
 }
 
 .detalle-contenedor {
@@ -33,7 +33,7 @@
     position: sticky;
 
     /* Altura exacta del header + espacio */
-    top: 40px;
+    top: 140px;
 
     align-self: start;
 }
@@ -97,6 +97,9 @@
     border-radius: 4px;
     transition: background-color 0.3s ease;
     margin-bottom: 40px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 .btn-whatsapp:hover {
@@ -285,4 +288,75 @@
         max-height: none;
     }
 
+}
+
+/* ---------------- MODAL TELÉFONO ---------------- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contenedor {
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.modal-contenedor h2 {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin: 0 0 25px 0;
+}
+
+.modal-botones {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.modal-boton-telefono {
+    padding: 15px 20px;
+    background-color: #062C22;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-boton-telefono:hover {
+    background-color: #D8C08A;
+    color: #062C22;
+}
+
+.modal-boton-cerrar {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-boton-cerrar:hover {
+    background-color: #e0e0e0;
 }
